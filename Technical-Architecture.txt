@@ -1,0 +1,26 @@
+The architecture for Telangana-TravelAI project:
+
+1. Data Collection & Preprocessing
+CSV Files: You have tourism data stored in CSV files (e.g., domestic_visitors_updated.csv and foreign_visitors_updated.csv).
+Data Processing: The data is read from these CSV files, and relevant columns are processed into usable text data.
+
+2. Embedding Generation
+Embedding Generation from Groq API: The text data (tourism-related information) is sent to the Groq API to generate embeddings. These embeddings represent the semantic meaning of the text and are necessary for building a similarity search.
+
+3. FAISS Index Creation
+FAISS (Facebook AI Similarity Search): The generated embeddings are indexed using FAISS. This index allows for efficient similarity search, enabling quick retrieval of relevant answers to user queries based on semantic similarity.
+Index Storage: The FAISS index and corresponding text data are stored in files (e.g., faiss.index and texts.npy).
+
+4. Query Handling & Search
+User Query: A user submits a query through a frontend interface (via a form or input field).
+Query Embedding: The query is sent to the Groq API to generate its embedding.
+FAISS Search: The query embedding is compared against the embeddings in the FAISS index to find the most relevant answers.
+Results Display: The top K results are retrieved, showing the tourism-related content most relevant to the query.
+
+5. Backend Workflow
+Request Handling: Requests are handled in Python, where the API calls to Groq are made and the results are processed.
+Vector Database Interaction: The FAISS index is loaded, searched, and results are returned in the form of the most relevant text.
+
+6. File Management
+Data Files: All raw and processed files (CSV, embeddings, FAISS index, etc.) are stored on the local disk.
+Environment Management: Environment variables (like API keys) are stored using .env files.
