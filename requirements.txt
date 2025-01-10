@@ -1,0 +1,10 @@
+langchain-groq
+transformers
+langchain
+faiss-cpu
+ChatGroq
+sentence-transformers
+huggingface_hub
+langchain--community
+
+
