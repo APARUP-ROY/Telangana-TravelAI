@@ -1,13 +1,3 @@
-!pip install langchain-groq
-!pip install transformers
-!pip install langchain
-!pip install faiss-cpu
-!pip install ChatGroq
-!pip install sentence-transformers
-!pip install huggingface_hub
-!pip install langchain--community
-
-
 import os
 from langchain.vectorstores import FAISS
 from langchain.document_loaders import CSVLoader
